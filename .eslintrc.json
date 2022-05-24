@@ -1,0 +1,40 @@
+//https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md
+//TSLINT rules: https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "react-hooks"
+  ],
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    //"@typescript-eslint/no-empty-interface": "off" or 0/"warn" or 1/"error" or 2
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/triple-slash-reference": "off",
+    //https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/quotes.md
+    "quotes": "off",
+    "@typescript-eslint/quotes": ["error", "double", { "allowTemplateLiterals": true }],
+    //https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars.md
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["warn", {
+      "ignoreRestSiblings": true, 
+      "argsIgnorePattern": "(^_|^event)",
+      "varsIgnorePattern": "(^_|^event)"
+    }],
+    "react/display-name": "off",
+    "react/no-children-prop": "off"
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    }
+  }
+}
